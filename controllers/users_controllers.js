@@ -36,6 +36,6 @@ module.exports.create = function(req,res){
         }
     })
 }
-module.exports.signIn = function(req,res){
-    //Todo Later
+module.exports.createSession = function(req,res){
+    return res.redirect('/');
 }
