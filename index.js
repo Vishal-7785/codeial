@@ -9,6 +9,7 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo')(session);
 app.use(express.urlencoded());
 app.use(cookieParser());
 // extract styles and scripts from sub pages into the layout
@@ -26,8 +27,15 @@ app.use(express.static('./assets'));
      resave: false,
      cookie: {
          maxAge: (1000*60*100)
-     }
+     },store: new MongoStore({
+        mongooseConnection: db,
+        autoRemove: 'disabled'
+    },function(err){
+        console.log('error connecting to mongostore');
+    }
+    )
  }));
+
  app.use(passport.initialize());
  app.use(passport.session());
  // set up express router

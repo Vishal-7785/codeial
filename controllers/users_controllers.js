@@ -1,14 +1,23 @@
 
 const User = require('../models/user');
 module.exports.profile = function(req,res){
-    return res.end('<h1> Users profile controller </h1>');
+    return res.render('user_profile',{
+        title: "Codeial Profile",
+        user: req.user
+    });
 }
 module.exports.signup = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up',{
         title: "Codeial|Sign Up"
     });
 }
 module.exports.signin = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_in',{
         title: "Codeial|Sign In"
     });
