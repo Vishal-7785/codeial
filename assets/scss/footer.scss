@@ -1,0 +1,39 @@
+footer{
+    background-color:darkgrey;
+    #footer{
+        display: flex;
+        #rights{
+            color:white;
+            margin-left:2%;
+            margin-top:1%;
+        }
+        #pages{
+            display: flex;
+        flex-direction: column;
+        margin-left:5%;
+        #Home{
+            margin-top:8%;
+            #home{
+                font-size:1.6rem;
+                color:black;
+            }
+        }
+        #Profile{
+            margin-top: 8%;
+            #profile{
+                font-size:1.6rem;
+                color:black;
+            }
+        }
+    
+        }
+        #Signout{
+            margin-left:45%;
+            margin-top: 1%;
+            #signout{
+                font-size:2.3rem;
+                color:black;
+            }
+        }
+    }
+}

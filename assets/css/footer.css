@@ -1,0 +1,28 @@
+footer {
+  background-color: darkgrey; }
+  footer #footer {
+    display: flex; }
+    footer #footer #rights {
+      color: white;
+      margin-left: 2%;
+      margin-top: 1%; }
+    footer #footer #pages {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5%; }
+      footer #footer #pages #Home {
+        margin-top: 8%; }
+        footer #footer #pages #Home #home {
+          font-size: 1.6rem;
+          color: black; }
+      footer #footer #pages #Profile {
+        margin-top: 8%; }
+        footer #footer #pages #Profile #profile {
+          font-size: 1.6rem;
+          color: black; }
+    footer #footer #Signout {
+      margin-left: 45%;
+      margin-top: 1%; }
+      footer #footer #Signout #signout {
+        font-size: 2.3rem;
+        color: black; }

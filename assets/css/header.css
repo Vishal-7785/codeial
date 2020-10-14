@@ -1,0 +1,21 @@
+header {
+  background-color: blue; }
+  header #header {
+    display: flex; }
+    header #header #Heading {
+      color: white;
+      margin-left: 2%; }
+    header #header #signin {
+      margin-left: 70%;
+      margin-top: 1%;
+      color: white; }
+      header #header #signin #Signin {
+        color: white;
+        font-size: 2rem; }
+    header #header #signup {
+      margin-left: 7%;
+      margin-top: 1%;
+      color: white; }
+      header #header #signup #Signup {
+        color: white;
+        font-size: 2rem; }
