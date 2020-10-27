@@ -8,6 +8,7 @@ router.get('/signin',usersController.signin);
 router.post('/create',usersController.create)
 // For sign out
 router.get('/sign-out',usersController.destroySession);
+router.post('/update/:id',passport.checkAuthentication,usersController.update);
 // Using passport as a middleware to authenticate
 router.post('/createSession',passport.authenticate(
     // This local tells that we have used local authentiation

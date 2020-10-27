@@ -7,8 +7,8 @@ module.exports.profile = function(req,res){
             return;
         }
         return res.render('user_profile',{
-            title: "Codeial Profile",
-            user: req.user
+            title: "User Profile",
+            profile_user: user
         });
     });
 }
@@ -57,4 +57,21 @@ module.exports.createSession = function(req,res){
 module.exports.destroySession = function(req,res){
     req.logout();
     return res.redirect('/');
+}
+module.exports.update = function(req,res){
+    // we are passing req.body as this contains req.body.name and req.body.email for updating name and email
+    console.log('start');
+    if(req.user.id == req.params.id){
+    User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+        console.log('half');
+        if(err){
+            console.log('Error in updaing users information',err);
+            return res.redirect('back');
+        }
+        console.log('updated');
+        return res.redirect('back');
+    });
+}else{
+    return res.status(401).send('Unauthorised');
+}
 }
