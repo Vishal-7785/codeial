@@ -37,7 +37,7 @@ passport.deserializeUser(function(id,done){
 passport.checkAuthentication = function(req,res,next){
 // If the user is signed in then pass the request to the next controller action
     if(req.isAuthenticated()){
-        return next();
+   return next();
     }
     return res.redirect('/users/signin');
 }
@@ -49,3 +49,4 @@ passport.setAuthenticatedUser = function(req,res,next){
     next();
 }
 module.exports = passport;
+// adding comment is not working

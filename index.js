@@ -11,7 +11,7 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
-
+//wait
 app.use(express.urlencoded());
 app.use(cookieParser());
 // extract styles and scripts from sub pages into the layout
@@ -47,6 +47,8 @@ app.use(express.static('./assets'));
 
  app.use(passport.initialize());
  app.use(passport.session());
+ app.use(passport.setAuthenticatedUser);
+
  // set up express router
 app.use('/',require('./routes'));
 
