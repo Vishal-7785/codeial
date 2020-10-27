@@ -52,10 +52,12 @@ module.exports.create = function(req,res){
     })
 }
 module.exports.createSession = function(req,res){
+    req.flash('success','Logged in successfully');
     return res.redirect('/');
 }
 module.exports.destroySession = function(req,res){
     req.logout();
+    req.flash('success','You have logged out');
     return res.redirect('/');
 }
 module.exports.update = async function(req,res){
