@@ -58,20 +58,17 @@ module.exports.destroySession = function(req,res){
     req.logout();
     return res.redirect('/');
 }
-module.exports.update = function(req,res){
+module.exports.update = async function(req,res){
     // we are passing req.body as this contains req.body.name and req.body.email for updating name and email
-    console.log('start');
-    if(req.user.id == req.params.id){
-    User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
-        console.log('half');
-        if(err){
-            console.log('Error in updaing users information',err);
-            return res.redirect('back');
+    try{
+        if(req.user.id == req.params.id){
+            await User.findByIdAndUpdate(req.params.id,req.body);
+                return res.redirect('back');
+        }else{
+            return res.status(401).send('Unauthorised');
         }
-        console.log('updated');
-        return res.redirect('back');
-    });
-}else{
-    return res.status(401).send('Unauthorised');
-}
+    }catch{
+        console.log('Error',err);
+    }
+    
 }
