@@ -19,6 +19,7 @@ Post.findById(req.body.post,function(err,post){
             }
         );
     }
+    req.flash('success','Comment posted');
    return res.redirect('back');
 
 });
@@ -34,9 +35,10 @@ module.exports.destroy = function(req,res){
             comment.remove();
             Post.findByIdAndUpdate(postid,{$pull:{comments:req.params.id}},function(err,post){
                 if(err){
-                    console.log('Error in deleting a post');
+                    req.flash('error',err);
                     return res.redirect('back');
                 }
+                req.flash('success','Comment deleted');
                 return res.redirect('back');
 
             });
@@ -44,7 +46,8 @@ module.exports.destroy = function(req,res){
             
         }
         else{
-            return res.redirect('back');
+
+        return res.redirect('back');
 
         }
     });

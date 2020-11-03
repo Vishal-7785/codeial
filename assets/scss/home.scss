@@ -1,3 +1,12 @@
- #home-container{
+#home-container{
         display: flex;
+        #feed-posts{
+            width:70%;     
+         }
+        #user-friends{
+            width:30%;
+            margin-left: 10%;
+        }
+        
 }
+// friends ko aside aana chahiye but wo neeche aa rahe h

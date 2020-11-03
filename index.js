@@ -27,6 +27,10 @@ app.use(sassMiddleware({
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 app.use(express.static('./assets'));
+
+// MAKE THE UPLOADS path available to the browser 
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 // set up view engine
  app.set('view engine','ejs');
  app.set('views','./views');
