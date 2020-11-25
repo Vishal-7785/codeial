@@ -23,7 +23,6 @@ module.exports.create = async function(req,res){
    
 }
 
-//ek kaam kijiye..mujhe ye zip bnakar de dijiye..node_modules reomve krke zip bnaiyega....bghiutt time leggea aapke code me...git hub link se chalega kya usme bhi node modules ni h...haan chlega..me kl dekh dunga..abhi ke liye sorry..are It's ok bhaiya main link de de raha 
 
 module.exports.destroy = async function(req, res){
 

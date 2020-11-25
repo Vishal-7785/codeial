@@ -117,3 +117,5 @@ module.exports.destroySession = function(req, res){
 
     return res.redirect('/');
 }
+
+// post form is invisiblee ok

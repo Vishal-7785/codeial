@@ -15,7 +15,8 @@
                 },error: function(error){
                     consol.log(error.responseText);
                 }
-            });
+            });//try now 
+// sign up pe jao to can not get user/ profile dikha raha h
         });
 
     }

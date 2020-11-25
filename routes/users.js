@@ -21,7 +21,7 @@ router.post('/create-session', passport.authenticate(
 
 
 router.get('/sign-out', usersController.destroySession);
-
+router.get('/auth/google',passport.authenticate('google',{scope: ['profile','email']}));
+router.get('/auth/google/callback', passport.authenticate('google',{failureRedirect:'/users/sign-in'}),usersController.createSession);
 module.exports = router;
 
-//u r using node or nodemom node but auto save is on....but server start nh hoti node se..tb hi tbse soch rha hu.ki q nh ho rha hai...w.aity...sir ka toh maine v follow kiya tha padhte time..aise scene nh tha..user auth hai fir v signin signup....bhaiya even aaj maine unka code tk copy paste kiya kyoki ye doubt 2 din se resolve ni ho paa raha tha to main apne code ko comment kiya or fir sir ka code niche paste kiya...aisa nh hota..paste jaise taise krne se..main jagah galat dekhna hota hai..krta hu....
