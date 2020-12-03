@@ -17,7 +17,6 @@ module.exports.home = async function(req, res){
                 path: 'user'
             }
         });
-        console.log(posts)
     
         let users = await User.find({});
 
