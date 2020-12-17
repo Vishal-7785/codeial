@@ -92,3 +92,10 @@ app.listen(port, function(err){
 
     console.log(`Server is running on port: ${port}`);
 });
+
+//just give me minute oki
+//just open ur chrome once
+//sorry brother my idea is not working :(
+    // its ok//thanks for understanding
+    //for this moment i m resolving is it okay?
+    // do escalate this//ya ya okay

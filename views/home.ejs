@@ -1,7 +1,7 @@
 
-
-   <link rel="stylesheet" href="/css/home.css">
-   <link rel="stylesheet" href="/css/chat_box.css">
+   <base href="/">  
+   <link rel="stylesheet" type="text/css" href="/css/home.css">
+   <link rel="stylesheet" type="text/css" href="/css/chat_box.css">
 
 <div id="home-container">
     <section id="feed-posts">
@@ -42,7 +42,13 @@
   crossorigin="anonymous"></script> 
 
 <!-- importing this script for creating the comments -->
+<!-- importing this script for creating the comments -->
+<script src="/js/home_comments.js" ></script>
 <script src="/js/home_posts.js"></script>
+
+
+
+
  <!-- importing script for socket.io from cdnjs.com to be used as observer for chatting -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
 <!-- importing  script to be used as user to chat and above script i.e observer will listen to it -->
@@ -53,4 +59,10 @@
         new ChatEngine('user-chat-box', '<%= locals.user.email%>')
     </script>
  <% } %>
-
+ <script src="js/toggle_likes.js"></script>
+ <script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
